@@ -23,7 +23,6 @@ public class Drawer extends Shape {
 
     public void draw(Collection<Shape> items){
 
-
         for (Object item : items) {
             if (item instanceof Circle) {
                 drawCircleOnCanvas((Circle) item);

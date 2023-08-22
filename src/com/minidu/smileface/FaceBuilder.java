@@ -2,40 +2,27 @@ package com.minidu.smileface;
 
 import com.minidu.common.Drawer.Circle;
 import com.minidu.common.Drawer.CurvedLine;
+import com.minidu.common.Theme;
 
 public class FaceBuilder {
 
-    String color1 ;
-    String color2 = "\u001B[40m \u001B[0m";
-
-    private int theme;
 
 
-    public FaceBuilder(int theme) {
-       this.theme = theme;
-    }
+    Theme theme = new Theme();
+
+    String themeColor1 = theme.theme1facecolor();
+    String themeColor2 = theme.theme1eyecolor();
+
+
 
 
 
     public Circle buildBigCircle(double radius, int row, int col) {
 
-        switch (theme) {
-            case 1://yellow
-                color1 = "\u001b[48;2;255;255;0m \u001b[0m";
-                break;
-            case 2://green
-                color1 = "\u001B[42m \u001B[0m";
-                break;
-            case 3://blue
-                color1 = "\u001B[44m \u001B[0m";
-                break;
-            default://yellow
-                color1 = "\u001b[48;2;255;255;0m \u001b[0m";
-                break;
-        }
 
 
-            Circle circle = new Circle(radius, row, col, color1);
+
+            Circle circle = new Circle(radius, row, col, themeColor1);
             return circle;
 
 
@@ -46,12 +33,12 @@ public class FaceBuilder {
 
 
 
-        Circle circle = new Circle(2, row, col,color2);
+        Circle circle = new Circle(2, row, col,themeColor2);
         return circle;
     }
 
     public CurvedLine buildCurvedLine(int row, int col) {
-        CurvedLine curvedLine = new CurvedLine(row, col, 4,10,4,color2);
+        CurvedLine curvedLine = new CurvedLine(row, col, 4,10,4,themeColor2);
         return curvedLine;
     }
 
@@ -59,6 +46,7 @@ public class FaceBuilder {
     public Face buildFace(){
 
         Face face = new Face();
+
 
         face.addCircle(buildBigCircle(8,15,20));
         face.addCircle(buildSmallCircle(12,24));

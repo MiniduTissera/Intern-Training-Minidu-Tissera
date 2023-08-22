@@ -8,7 +8,7 @@ public class Application {
     public static void main(String[] args) {
 
         //add theme number (1,2,3)
-        TreeBuilder treeBuilder = new TreeBuilder(1);
+        TreeBuilder treeBuilder = new TreeBuilder();
         Tree tree = treeBuilder.buildTree();
         Drawer drawer = new Drawer();
 

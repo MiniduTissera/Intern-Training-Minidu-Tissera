@@ -3,80 +3,41 @@ package com.minidu.treev5;
 import com.minidu.common.Drawer.Leaf;
 import com.minidu.common.Drawer.Line;
 import com.minidu.common.Drawer.Rectangle;
+import com.minidu.common.Theme;
 
 public class TreeBuilder {
 
-    private int theme;
 
-    String color = "\u001B[48;2;139;69;19m \u001B[0m";
 
-    String lcolor = "\u001B[42m \u001B[0m";
+    Theme theme = new Theme();
 
-    public TreeBuilder(int theme) {
-        this.theme = theme;
-    }
+    String themeColor1 = theme.theme2Trunkcolor();
+    String themeColor2 = theme.theme2Leafcolor();
+
+
 
     public Rectangle buildTrunk(int row, int col, int width, int height) {
 
-        switch (theme) {
-            case 1://brown
-                color = "\u001B[48;2;139;69;19m \u001B[0m";
-                break;
-            case 2://blue
-                color = "\u001B[44m \u001B[0m";
-                break;
-            case 3://green
-                color = "\u001B[42m \u001B[0m";
-                break;
-            default://brown
-                color = "\u001B[48;2;139;69;19m \u001B[0m";
-                break;
-        }
 
-        Rectangle rectangle = new Rectangle(width, height, row, col,color);
+
+        Rectangle rectangle = new Rectangle(width, height, row, col,themeColor1);
         return rectangle;
     }
 
     public Line buildBranch(int row, int col, int angle, int thickness, int length){
 
-        switch (theme) {
-            case 1://brown
-                color = "\u001B[48;2;139;69;19m \u001B[0m";
-                break;
-            case 2://green
-                color = "\u001B[42m \u001B[0m";
-                break;
-            case 3://blue
-                color = "\u001B[44m \u001B[0m";
-                break;
-            default://brown
-                color = "\u001B[48;2;139;69;19m \u001B[0m";
-                break;
-        }
 
-        Line line = new Line( row, col, angle,  thickness,length,color);
+
+        Line line = new Line( row, col, angle,  thickness,length,themeColor1);
         return line;
 
     }
 
     public Leaf buildLeaf(int col, int row, int depth){
 
-        switch (theme) {
-            case 1://green
-                lcolor = "\u001B[42m \u001B[0m";
-                break;
-            case 2://yellow
-                lcolor = "\u001b[48;2;255;255;0m \u001b[0m";
-                break;
-            case 3://blue
-                lcolor = "\u001B[40m \u001B[0m";
-                break;
-            default://green
-                lcolor = "\u001B[42m \u001B[0m";
-                break;
-        }
 
-        Leaf leaf1 = new Leaf(1.8,row,col,lcolor);
+
+        Leaf leaf1 = new Leaf(1.8,row,col,themeColor2);
 
       return leaf1;
 
@@ -85,6 +46,7 @@ public class TreeBuilder {
 
     public Tree buildTree(){
         Tree tree = new Tree();
+
 
         tree.addTrunk(buildTrunk(18,26,9,9));
 

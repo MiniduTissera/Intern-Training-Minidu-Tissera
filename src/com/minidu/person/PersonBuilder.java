@@ -1,6 +1,7 @@
 package com.minidu.person;
 
 
+import com.minidu.common.Theme;
 import com.minidu.smileface.Face;
 import com.minidu.smileface.FaceBuilder;
 import com.minidu.treev5.Tree;
@@ -8,17 +9,16 @@ import com.minidu.treev5.TreeBuilder;
 
 public class PersonBuilder {
 
-    private int theme;
 
-    public PersonBuilder(int theme) {
-        this.theme = theme;
-    }
+
+
 
     public Face buildPersonFace(){
 
-        FaceBuilder fb = new FaceBuilder(theme);
+        FaceBuilder fb = new FaceBuilder();
 
         Face face = new Face();
+        Theme theme = new Theme();
 
         face.addCircle(fb.buildBigCircle(8,13,25));
         face.addCircle(fb.buildSmallCircle(10,22));
@@ -32,7 +32,7 @@ public class PersonBuilder {
 
     public Tree buildPersonBody(){
 
-        TreeBuilder tb = new TreeBuilder(theme);
+        TreeBuilder tb = new TreeBuilder();
 
         Tree tree = new Tree();
 
