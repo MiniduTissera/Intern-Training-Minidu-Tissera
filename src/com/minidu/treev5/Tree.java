@@ -19,7 +19,7 @@ public class Tree {
     }
 
     public Collection<Shape> getBranches() {
-        return branches;
+        return (Collection<Shape>) branches;
     }
 
     public void addLeaf(Leaf leaf) {
