@@ -14,8 +14,6 @@ public class Application {
 
 
         drawer.draw(tree.getTrunks());
-
-
         drawer.draw(tree.getLeaves());
         drawer.draw(tree.getBranches());
 

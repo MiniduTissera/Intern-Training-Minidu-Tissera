@@ -1,22 +1,23 @@
 package com.minidu.treev5;
 
-import com.minidu.common.Drawer.Leaf;
-import com.minidu.common.Drawer.Line;
-import com.minidu.common.Drawer.Rectangle;
+import com.minidu.common.Drawer.*;
 import com.minidu.common.Theme;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class TreeBuilder {
 
 
 
-    Theme theme = new Theme();
+     static Theme theme = new Theme();
 
-    String themeColor1 = theme.theme2Trunkcolor();
-    String themeColor2 = theme.theme2Leafcolor();
+     static String themeColor1 = theme.theme2Trunkcolor();
+     static String themeColor2 = theme.theme2Leafcolor();
 
 
 
-    public Rectangle buildTrunk(int row, int col, int width, int height) {
+    public static Rectangle buildTrunk(int row, int col, int width, int height) {
 
 
 
@@ -24,7 +25,7 @@ public class TreeBuilder {
         return rectangle;
     }
 
-    public Line buildBranch(int row, int col, int angle, int thickness, int length){
+    public static Line buildBranch(int row, int col, int angle, int thickness, int length){
 
 
 
@@ -33,7 +34,7 @@ public class TreeBuilder {
 
     }
 
-    public Leaf buildLeaf(int col, int row, int depth){
+    public static Leaf buildLeaf(int col, int row, int depth){
 
 
 
@@ -90,6 +91,49 @@ public class TreeBuilder {
 
 
 
+        return tree;
+    }
+
+
+    public static Tree buildTree2D(){
+        Tree tree = new Tree();
+
+
+        tree.addTrunk(buildTrunk(250,190,80,200));
+
+
+
+        tree.addBranch(buildBranch(145,140,60,20,120));
+        tree.addBranch(buildBranch(145,320,120,20,120));
+
+        tree.addBranch(buildBranch(140,210,120,15,60));
+
+
+        tree.addLeaf(buildLeaf(130,250, 0));
+
+        tree.addLeaf(buildLeaf(80,210,2));
+        tree.addLeaf(buildLeaf(50,150,2));
+        tree.addLeaf(buildLeaf(50,85,1));
+        tree.addLeaf(buildLeaf(100,40,1));
+        tree.addLeaf(buildLeaf(160,25,1));
+        tree.addLeaf(buildLeaf(230,20,1));
+        tree.addLeaf(buildLeaf(310,40,1));
+
+
+        tree.addLeaf(buildLeaf(110,150,2));
+        tree.addLeaf(buildLeaf(230,170,1));
+        tree.addLeaf(buildLeaf(175,190,1));
+        tree.addLeaf(buildLeaf(200,110,1));
+        tree.addLeaf(buildLeaf(140,90,1));
+        tree.addLeaf(buildLeaf(260,70,1));
+        tree.addLeaf(buildLeaf(280,125,1));
+
+
+        tree.addLeaf(buildLeaf(275,250, 0));
+        tree.addLeaf(buildLeaf(330,210,2));
+        tree.addLeaf(buildLeaf(360,150,2));
+        tree.addLeaf(buildLeaf(360,85,1));
+
 
 
 
@@ -99,3 +143,5 @@ public class TreeBuilder {
 
 
 }
+
+

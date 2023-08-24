@@ -14,9 +14,11 @@ public class Line extends Shape {
         super(row, col);
         this.row = row;
         this.col = col;
-        this.length = length;
+
         this.angle = angle;
         this.thickness = thickness;
+        this.length = length;
+
         this.color = color;
 
     }
