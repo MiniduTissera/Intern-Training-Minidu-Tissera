@@ -11,7 +11,7 @@ public class Line extends Shape {
 
 
     public Line(int row, int col, int angle, int thickness, int length, String color) {
-        super(row, col);
+        super(row, col, ShapeType.LINE);
         this.row = row;
         this.col = col;
 

@@ -11,6 +11,7 @@ public class Face {
 
     private Collection<Shape> circles = new ArrayList<>();
     private Collection<Shape> curvedLines = new ArrayList<>();
+    private Collection<Shape> leaves = new ArrayList<>();
 
     public void addCircle(Shape circle) {
         circles.add(circle);
@@ -27,5 +28,15 @@ public class Face {
     public Collection<Shape> getCurvedLines() {
         return curvedLines;
     }
+
+
+    public void addLeaf(Shape leaf) {
+        leaves.add(leaf);
+    }
+
+    public Collection<Shape> getLeaf() {
+        return leaves;
+    }
+
 
 }

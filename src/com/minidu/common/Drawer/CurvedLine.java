@@ -10,7 +10,7 @@ public class CurvedLine extends Shape {
     private String color;
 
     public CurvedLine(int row, int col, int width, int height, int radius, String color) {
-        super(row, col);
+        super(row, col, ShapeType.CURVED_LINE);
         this.row = row;
         this.col = col;
         this.width = width;

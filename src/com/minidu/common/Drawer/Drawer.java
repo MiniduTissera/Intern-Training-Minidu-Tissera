@@ -14,7 +14,7 @@ public class Drawer extends Shape {
     Grid canvas = new Grid(gridHeight,gridWidth);
 
     public Drawer(int row, int col) {
-        super(row, col);
+        super(row, col, ShapeType.RECTANGLE);
     }
 
     public Drawer() {

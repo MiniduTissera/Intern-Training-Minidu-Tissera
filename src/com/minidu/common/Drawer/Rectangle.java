@@ -11,7 +11,7 @@ public class Rectangle extends Shape {
 
 
     public Rectangle(int width, int height, int row, int col, String color) {
-        super(row, col);
+        super(row, col, ShapeType.RECTANGLE);
         this.width = width;
         this.height = height;
         this.row = row;

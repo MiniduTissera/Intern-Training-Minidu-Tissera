@@ -9,7 +9,7 @@ public class Application {
 
         //add theme number (1,2,3)
         FaceBuilder faceBuilder = new FaceBuilder();
-        Theme theme = new Theme();
+
         Face face = faceBuilder.buildFace();
         Drawer drawer = new Drawer();
 

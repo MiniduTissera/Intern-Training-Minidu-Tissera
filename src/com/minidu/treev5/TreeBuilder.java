@@ -102,13 +102,6 @@ public class TreeBuilder {
         tree.addTrunk(buildTrunk(250,190,80,200));
 
 
-
-        tree.addBranch(buildBranch(145,140,60,20,120));
-        tree.addBranch(buildBranch(145,320,120,20,120));
-
-        tree.addBranch(buildBranch(140,210,120,15,60));
-
-
         tree.addLeaf(buildLeaf(130,250, 0));
 
         tree.addLeaf(buildLeaf(80,210,2));
@@ -128,13 +121,19 @@ public class TreeBuilder {
         tree.addLeaf(buildLeaf(260,70,1));
         tree.addLeaf(buildLeaf(280,125,1));
 
+        tree.addLeaf(buildLeaf(275,200, 0));
 
-        tree.addLeaf(buildLeaf(275,250, 0));
+
+        tree.addLeaf(buildLeaf(270,253, 0));
         tree.addLeaf(buildLeaf(330,210,2));
         tree.addLeaf(buildLeaf(360,150,2));
         tree.addLeaf(buildLeaf(360,85,1));
 
 
+        tree.addBranch(buildBranch(145,140,60,20,120));
+        tree.addBranch(buildBranch(145,320,120,20,120));
+
+        tree.addBranch(buildBranch(140,210,120,15,60));
 
 
 

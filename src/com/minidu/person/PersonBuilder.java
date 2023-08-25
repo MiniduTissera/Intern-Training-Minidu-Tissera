@@ -20,11 +20,11 @@ public class PersonBuilder {
         Face face = new Face();
         Theme theme = new Theme();
 
-        face.addCircle(fb.buildBigCircle(8,13,25));
-        face.addCircle(fb.buildSmallCircle(10,22));
-        face.addCircle(fb.buildSmallCircle(10,28));
+        face.addCircle(fb.buildBigCircle(13,25,8));
+        face.addCircle(fb.buildSmallCircle(10,22,2));
+        face.addCircle(fb.buildSmallCircle(10,28,2));
 
-        face.addCurvedLine(fb.buildCurvedLine(13,50));
+        face.addCurvedLine(fb.buildCurvedLine(13,50,4));
 
         return face;
 
@@ -49,6 +49,48 @@ public class PersonBuilder {
 
 
     }
+
+
+    public Face buildPersonFace2D(){
+
+        FaceBuilder fb = new FaceBuilder();
+
+        Face face = new Face();
+
+
+        face.addCircle(fb.buildBigCircle(8,13,25));
+        face.addCircle(fb.buildSmallCircle(10,22,2));
+        face.addCircle(fb.buildSmallCircle(10,28,2));
+
+        face.addCurvedLine(fb.buildCurvedLine(13,50,4));
+
+        return face;
+
+    }
+
+    public Tree buildPersonBody2D(){
+
+        TreeBuilder tb = new TreeBuilder();
+
+        Tree tree = new Tree();
+
+        tree.addTrunk(tb.buildTrunk(330,195,80,200));
+
+        tree.addBranch(tb.buildBranch(520,270,60,20,140));
+        tree.addBranch(tb.buildBranch(520,200,120,20,140));
+
+        tree.addBranch(tb.buildBranch(280,110,45,20,120));
+        tree.addBranch(tb.buildBranch(280,360,135,20,120));
+
+
+
+        return  tree;
+
+
+    }
+
+
+
 
 
 
