@@ -1,14 +1,15 @@
 package com.minidu.common.Drawer;
 
-public class Leaf extends Shape {
+public class Smallleaf extends Leaf{
 
     private final double radius;
 
 
     private final String color;
 
-    public Leaf(double radius, int row, int col, String color) {
-        super(row, col, ShapeType.LEAF);
+    public Smallleaf(double radius, int row, int col, String color) {
+        super(radius,row,col,color);
+
         this.radius = radius;
         this.row = row;
         this.col = col;
@@ -32,6 +33,8 @@ public class Leaf extends Shape {
     public String getColor() {
         return color;
     }
+
+
 
 
 }

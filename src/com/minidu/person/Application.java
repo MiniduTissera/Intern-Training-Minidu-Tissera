@@ -23,9 +23,7 @@ public class Application {
         drawer.draw(tree.getTrunks());
 
 
-        drawer.displayframe();
-
-
+        drawer.displayFrame();
 
 
     }

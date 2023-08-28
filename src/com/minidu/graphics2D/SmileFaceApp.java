@@ -6,7 +6,6 @@ import com.minidu.common.Drawer.Shape;
 import com.minidu.smileface.Face;
 import com.minidu.smileface.FaceBuilder;
 
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,18 +17,13 @@ public class SmileFaceApp {
         SwingUtilities.invokeLater(() -> {
 
             Face face = FaceBuilder.buildFace2D();
-
-
-            Collection<Shape> circles = face.getCircle();
-            Collection<Shape> curvedLines = face.getCurvedLines();
-            Collection<Shape> leaves = face.getLeaf();
-
+            
 
             // Combine all shapes into a single collection
             Collection<Shape> allShapes = new ArrayList<>();
-            allShapes.addAll(circles);
-            allShapes.addAll(curvedLines);
-            allShapes.addAll(leaves);
+            allShapes.addAll(face.getCircle());
+            allShapes.addAll(face.getCurvedLines());
+            allShapes.addAll(face.getLeaf());
 
             boolean useRandomLeafColors = false; // Set to true or false
 
@@ -42,8 +36,6 @@ public class SmileFaceApp {
             frame.setVisible(true);
         });
     }
-
-
 
 
 }

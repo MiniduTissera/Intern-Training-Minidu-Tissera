@@ -7,7 +7,7 @@ public class Application {
 
     public static void main(String[] args) {
 
-        //add theme number (1,2,3)
+
         TreeBuilder treeBuilder = new TreeBuilder();
         Tree tree = treeBuilder.buildTree();
         Drawer drawer = new Drawer();
@@ -17,7 +17,7 @@ public class Application {
         drawer.draw(tree.getLeaves());
         drawer.draw(tree.getBranches());
 
-        drawer.displayframe();
+        drawer.displayFrame();
 
 
     }

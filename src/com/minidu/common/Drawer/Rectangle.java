@@ -3,11 +3,10 @@ package com.minidu.common.Drawer;
 public class Rectangle extends Shape {
 
 
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
-    private String color;
-
+    private final String color;
 
 
     public Rectangle(int width, int height, int row, int col, String color) {

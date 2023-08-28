@@ -6,5 +6,6 @@ public enum ShapeType {
     LEAF,
     CURVED_LINE,
     LINE,
-    CIRCLE
+    CIRCLE,
+    SMALL_LEAF
 }

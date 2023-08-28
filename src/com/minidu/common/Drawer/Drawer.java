@@ -2,26 +2,23 @@ package com.minidu.common.Drawer;
 
 import com.minidu.common.Grid;
 
-
 import java.util.Collection;
 
-public class Drawer extends Shape {
+public class Drawer {
 
 
     int gridHeight = 50;
     int gridWidth = 100;
 
-    Grid canvas = new Grid(gridHeight,gridWidth);
+    Grid canvas = new Grid(gridHeight, gridWidth);
 
-    public Drawer(int row, int col) {
-        super(row, col, ShapeType.RECTANGLE);
-    }
+
 
     public Drawer() {
         super();
     }
 
-    public void draw(Collection<Shape> items){
+    public void draw(Collection<Shape> items) {
 
         for (Object item : items) {
             if (item instanceof Circle) {
@@ -41,9 +38,9 @@ public class Drawer extends Shape {
 
     }
 
-    public void displayframe(){
+    public void displayFrame() {
 
-        canvas.display(gridHeight,gridWidth);
+        canvas.display(gridHeight, gridWidth);
 
     }
 
@@ -58,9 +55,7 @@ public class Drawer extends Shape {
     }
 
 
-    public void drawBranchOnCanvas(Line line){
-
-
+    public void drawBranchOnCanvas(Line line) {
 
 
         double radians = Math.toRadians(line.getAngle());
@@ -78,13 +73,9 @@ public class Drawer extends Shape {
         }
 
 
-
-
     }
 
     public void drawLeafOnCanvas(Leaf leaf) {
-
-
 
 
         for (int angle = 0; angle < 360; angle++) {
@@ -97,13 +88,12 @@ public class Drawer extends Shape {
 
 
     }
-    private void plotPixell (String[][]grid,int x, int y, Leaf leaf){
+
+    private void plotPixell(String[][] grid, int x, int y, Leaf leaf) {
         if (x >= 0 && x < grid[0].length && y >= 0 && y < grid.length) {
             grid[y][x] = leaf.getColor();
         }
     }
-
-
 
 
     public void drawCircleOnCanvas(Circle circle) {
@@ -113,12 +103,12 @@ public class Drawer extends Shape {
         double radius = circle.getRadius();
 
 
-        for (int y = (int) (centerY - radius+1); y < centerY + radius; y++) {
-            for (int x = (int) (centerX - radius+1); x < centerX + radius; x++) {
+        for (int y = (int) (centerY - radius + 1); y < centerY + radius; y++) {
+            for (int x = (int) (centerX - radius + 1); x < centerX + radius; x++) {
                 double distanceSquared = (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY);
                 if (distanceSquared <= radius * radius) {
 
-                    int z = x*2;
+                    int z = x * 2;
 
 
                     plotPixel(canvas.getGrid(), z, y, circle);
@@ -126,12 +116,12 @@ public class Drawer extends Shape {
             }
         }
 
-        for (int y = (int) (centerY - radius+1); y < centerY + radius; y++) {
-            for (int x = (int) (centerX - radius+1); x < centerX + radius; x++) {
+        for (int y = (int) (centerY - radius + 1); y < centerY + radius; y++) {
+            for (int x = (int) (centerX - radius + 1); x < centerX + radius; x++) {
                 double distanceSquared = (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY);
                 if (distanceSquared <= radius * radius) {
 
-                    int z = x*2+1;
+                    int z = x * 2 + 1;
 
 
                     plotPixel(canvas.getGrid(), z, y, circle);
@@ -142,13 +132,13 @@ public class Drawer extends Shape {
 
     }
 
-    private void plotPixel (String[][]grid,int x, int y, Circle circle){
+    private void plotPixel(String[][] grid, int x, int y, Circle circle) {
         if (x >= 0 && x < grid[0].length && y >= 0 && y < grid.length) {
             grid[y][x] = circle.getColor();
         }
     }
 
-    public void drawCurvedLineOnCanvas(CurvedLine curvedLine){
+    public void drawCurvedLineOnCanvas(CurvedLine curvedLine) {
 
         for (int angle = 0; angle < 180; angle++) {
             double radians = Math.toRadians(angle);
@@ -160,7 +150,7 @@ public class Drawer extends Shape {
 
     }
 
-    private void plotPixel2 (String[][]grid,int x, int y, CurvedLine curvedLine){
+    private void plotPixel2(String[][] grid, int x, int y, CurvedLine curvedLine) {
         if (x >= 0 && x < grid[0].length && y >= 0 && y < grid.length) {
             grid[y][x] = curvedLine.getColor();
         }

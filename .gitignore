@@ -1,8 +1,25 @@
 ### IntelliJ IDEA ###
 .idea/
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+*.puml
+*.png
+
+# PlantUML generated files
+person.puml
+all.puml
+new.png
+new.puml
+Class Diagram.png
+
+# Gradle generated files
+build/
+
+# Maven generated files
+target/
+
+# Ignore compiled output and generated files in source directories
+**/src/*/out/
+**/src/*/bin/
 
 ### Eclipse ###
 .apt_generated

@@ -15,16 +15,16 @@ public class TreeApp {
         SwingUtilities.invokeLater(() -> {
             Tree tree = TreeBuilder.buildTree2D();
 
-            Collection<Shape> leaves = tree.getLeaves();
-            Collection<Shape> branches = tree.getBranches();
-            Collection<Shape> trunks = tree.getTrunks();
+
 
             // Combine all shapes into a single collection
             Collection<Shape> allShapes = new ArrayList<>();
 
-            allShapes.addAll(branches);
-            allShapes.addAll(trunks);
-            allShapes.addAll(leaves);
+            allShapes.addAll(tree.getLeaves());
+            allShapes.addAll(tree.getBranches());
+            allShapes.addAll(tree.getTrunks());
+
+            allShapes.addAll(tree.getSmallLeaf());
 
 
             boolean useRandomLeafColors = true; // Set to true or false

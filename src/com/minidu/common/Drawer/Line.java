@@ -3,11 +3,11 @@ package com.minidu.common.Drawer;
 public class Line extends Shape {
 
 
-    private int length;
-    private int angle;
-    private int thickness;
+    private final int length;
+    private final int angle;
+    private final int thickness;
 
-    private String color;
+    private final String color;
 
 
     public Line(int row, int col, int angle, int thickness, int length, String color) {
@@ -34,6 +34,7 @@ public class Line extends Shape {
     public int getThickness() {
         return thickness;
     }
+
     public int getCol() {
         return col;
     }

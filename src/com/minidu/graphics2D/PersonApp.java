@@ -23,20 +23,14 @@ public class PersonApp {
 
 
 
-            Collection<Shape> circles = face.getCircle();
-            Collection<Shape> curvedLines = face.getCurvedLines();
-            Collection<Shape> leaves = face.getLeaf();
-            Collection<Shape> trunks = tree.getTrunks();
-            Collection<Shape> branches = tree.getBranches();
-
-
             // Combine all shapes into a single collection
             Collection<Shape> allShapes = new ArrayList<>();
-            allShapes.addAll(circles);
-            allShapes.addAll(curvedLines);
-            allShapes.addAll(leaves);
-            allShapes.addAll(trunks);
-            allShapes.addAll(branches);
+
+            allShapes.addAll(face.getCircle());
+            allShapes.addAll(face.getCurvedLines());
+            allShapes.addAll(face.getLeaf());
+            allShapes.addAll(tree.getTrunks());
+            allShapes.addAll(tree.getBranches());
 
             boolean useRandomLeafColors = false; // Set to true or false
 

@@ -1,25 +1,23 @@
 package com.minidu.treev5;
 
-import com.minidu.common.Drawer.Leaf;
-import com.minidu.common.Drawer.Line;
-import com.minidu.common.Drawer.Rectangle;
-import com.minidu.common.Drawer.Shape;
+import com.minidu.common.Drawer.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class Tree {
 
-    private Collection<Shape> branches = new ArrayList<>();
-    private Collection<Shape> leaves = new ArrayList<>();
-    private Collection<Shape> rectangles = new ArrayList<>();
+    private final Collection<Shape> branches = new ArrayList<>();
+    private final Collection<Shape> leaves = new ArrayList<>();
+    private final Collection<Shape> smallLeaves = new ArrayList<>();
+    private final Collection<Shape> rectangles = new ArrayList<>();
 
     public void addBranch(Line line) {
         branches.add(line);
     }
 
     public Collection<Shape> getBranches() {
-        return (Collection<Shape>) branches;
+        return branches;
     }
 
     public void addLeaf(Leaf leaf) {
@@ -28,6 +26,14 @@ public class Tree {
 
     public Collection<Shape> getLeaves() {
         return leaves;
+    }
+
+    public void addSmallLeaf(Smallleaf smallleaf) {
+        smallLeaves.add(smallleaf);
+    }
+
+    public Collection<Shape> getSmallLeaf() {
+        return smallLeaves;
     }
 
     public void addTrunk(Rectangle rectangle) {

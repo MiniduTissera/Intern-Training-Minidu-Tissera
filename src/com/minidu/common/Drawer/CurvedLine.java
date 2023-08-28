@@ -3,11 +3,11 @@ package com.minidu.common.Drawer;
 public class CurvedLine extends Shape {
 
 
-    private int width;
-    private int height;
-    private int radius;
+    private final int width;
+    private final int height;
+    private final int radius;
 
-    private String color;
+    private final String color;
 
     public CurvedLine(int row, int col, int width, int height, int radius, String color) {
         super(row, col, ShapeType.CURVED_LINE);

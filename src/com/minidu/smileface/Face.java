@@ -1,6 +1,5 @@
 package com.minidu.smileface;
 
-import com.minidu.common.Drawer.Circle;
 import com.minidu.common.Drawer.CurvedLine;
 import com.minidu.common.Drawer.Shape;
 
@@ -9,9 +8,9 @@ import java.util.Collection;
 
 public class Face {
 
-    private Collection<Shape> circles = new ArrayList<>();
-    private Collection<Shape> curvedLines = new ArrayList<>();
-    private Collection<Shape> leaves = new ArrayList<>();
+    private final Collection<Shape> circles = new ArrayList<>();
+    private final Collection<Shape> curvedLines = new ArrayList<>();
+    private final Collection<Shape> leaves = new ArrayList<>();
 
     public void addCircle(Shape circle) {
         circles.add(circle);

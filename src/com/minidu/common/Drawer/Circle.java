@@ -3,18 +3,16 @@ package com.minidu.common.Drawer;
 public class Circle extends Shape {
 
 
-
-    private double radius;
-    private String color;
+    private final double radius;
+    private final String color;
 
     public Circle(int row, int col, double radius, String color) {
         super(row, col, ShapeType.CIRCLE);
         this.radius = radius;
         this.color = color;
-        this.col=col;
+        this.col = col;
         this.row = row;
     }
-
 
 
     public double getRadius() {
@@ -32,7 +30,6 @@ public class Circle extends Shape {
     public String getColor() {
         return color;
     }
-
 
 
 }
