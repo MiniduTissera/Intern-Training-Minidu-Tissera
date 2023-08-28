@@ -21,7 +21,17 @@ public class DrawerGUI extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
+        drawShape(g2d);
+
+
+    }
+    
+
+    public void drawShape(Graphics2D g2d)
+    {
+
         Random random = new Random();
+
 
         if (items != null) {
             for (Shape shape : items) {
@@ -98,7 +108,6 @@ public class DrawerGUI extends JPanel {
                 }
             }
         }
-
     }
 
 
