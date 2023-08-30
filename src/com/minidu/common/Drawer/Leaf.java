@@ -6,15 +6,18 @@ public class Leaf extends Shape {
 
 
     private final String color;
+    protected final int depth;
 
-    public Leaf(double radius, int row, int col, String color) {
+    public Leaf(double radius, int row, int col, String color, int depth) {
         super(row, col, ShapeType.LEAF);
         this.radius = radius;
+        this.depth = depth;
         this.row = row;
         this.col = col;
         this.color = color;
 
     }
+
 
 
     public double getRadius() {
@@ -27,6 +30,10 @@ public class Leaf extends Shape {
 
     public int getCol() {
         return col;
+    }
+
+    public int getDepth() {
+        return depth;
     }
 
     public String getColor() {

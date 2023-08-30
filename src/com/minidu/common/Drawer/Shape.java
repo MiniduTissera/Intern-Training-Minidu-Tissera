@@ -5,6 +5,7 @@ public class Shape {
     protected int row;
     protected int col;
 
+
     protected ShapeType type;
 
     public Shape(int row, int col, ShapeType type) {
@@ -21,4 +22,6 @@ public class Shape {
     public ShapeType getType() {
         return type;
     }
+
+
 }

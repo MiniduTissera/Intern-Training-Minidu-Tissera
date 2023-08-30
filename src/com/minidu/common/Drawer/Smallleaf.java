@@ -7,16 +7,11 @@ public class Smallleaf extends Leaf{
 
     private final String color;
 
-    public Smallleaf(double radius, int row, int col, String color) {
-        super(radius,row,col,color);
-
+    public Smallleaf(double radius, int row, int col, String color, int depth) {
+        super(radius, row, col, color, depth);
         this.radius = radius;
-        this.row = row;
-        this.col = col;
         this.color = color;
-
     }
-
 
     public double getRadius() {
         return radius;

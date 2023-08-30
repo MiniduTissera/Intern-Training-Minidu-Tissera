@@ -37,7 +37,7 @@ public class FaceBuilder {
     public static Leaf buildLeaf(int col, int row, int depth) {
 
 
-        return new Leaf(1.8, row, col, themeColor2);
+        return new Leaf(1.8, row, col, themeColor2, depth);
 
 
     }

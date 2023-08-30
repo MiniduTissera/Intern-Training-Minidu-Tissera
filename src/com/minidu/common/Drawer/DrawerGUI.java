@@ -3,6 +3,7 @@ package com.minidu.common.Drawer;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Random;
 
 public class DrawerGUI extends JPanel {
@@ -25,7 +26,7 @@ public class DrawerGUI extends JPanel {
 
 
     }
-    
+
 
     public void drawShape(Graphics2D g2d)
     {
@@ -34,6 +35,7 @@ public class DrawerGUI extends JPanel {
 
 
         if (items != null) {
+
             for (Shape shape : items) {
 
                 switch (shape.getType()) {
@@ -108,6 +110,17 @@ public class DrawerGUI extends JPanel {
                 }
             }
         }
+
+
+    }
+
+    public void drawRectangle(Graphics2D g2d,Shape shape){
+
+        Rectangle rectangle = (Rectangle) shape;
+        Color brown = new Color(139, 69, 19);
+        g2d.setColor(brown);
+        g2d.fillRect(rectangle.getCol(), rectangle.getRow(), rectangle.getWidth(), rectangle.getHeight());
+
     }
 
 

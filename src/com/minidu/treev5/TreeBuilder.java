@@ -1,10 +1,11 @@
 package com.minidu.treev5;
 
-import com.minidu.common.Drawer.Leaf;
-import com.minidu.common.Drawer.Line;
-import com.minidu.common.Drawer.Rectangle;
-import com.minidu.common.Drawer.Smallleaf;
+import com.minidu.common.Drawer.*;
 import com.minidu.common.Theme;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.*;
 
 public class TreeBuilder {
 
@@ -31,7 +32,7 @@ public class TreeBuilder {
     public static Leaf buildLeaf(int col, int row, int depth) {
 
 
-        return new Leaf(1.8, row, col, themeColor2);
+        return new Leaf(1.8, row, col, themeColor2, depth);
 
 
     }
@@ -39,7 +40,7 @@ public class TreeBuilder {
     public static Smallleaf buildSmallLeaf(int col, int row, int depth) {
 
 
-        return new Smallleaf(1.5, row, col, themeColor2);
+        return new Smallleaf(1.5, row, col, themeColor2,1);
 
 
     }
@@ -48,13 +49,16 @@ public class TreeBuilder {
         Tree tree = new Tree();
 
 
-        tree.addTrunk(buildTrunk(250, 190, 80, 200));
 
 
-        tree.addLeaf(buildLeaf(130, 250, 0));
 
-        tree.addLeaf(buildLeaf(80, 210, 2));
-        tree.addLeaf(buildLeaf(50, 150, 2));
+        tree.addLeaf(buildLeaf(130, 250, 1));
+
+        tree.addLeaf(buildLeaf(80, 210, 3));
+        tree.addLeaf(buildLeaf(50, 150, 3));
+
+        tree.addLeaf(buildLeaf(120, 150, 3));
+
         tree.addLeaf(buildLeaf(50, 85, 1));
         tree.addLeaf(buildLeaf(100, 40, 1));
         tree.addLeaf(buildLeaf(160, 25, 1));
@@ -62,52 +66,54 @@ public class TreeBuilder {
         tree.addLeaf(buildLeaf(310, 40, 1));
 
 
-        tree.addLeaf(buildLeaf(110, 150, 2));
-        tree.addLeaf(buildLeaf(230, 170, 1));
-        tree.addLeaf(buildLeaf(175, 190, 1));
-        tree.addLeaf(buildLeaf(200, 110, 1));
-        tree.addLeaf(buildLeaf(140, 90, 1));
+        tree.addLeaf(buildLeaf(110, 150, 3));
+        tree.addLeaf(buildLeaf(230, 170, 3));
+        tree.addLeaf(buildLeaf(175, 190, 3));
+        tree.addLeaf(buildLeaf(200, 110, 3));
+        tree.addLeaf(buildLeaf(140, 90, 3));
         tree.addLeaf(buildLeaf(260, 70, 1));
         tree.addLeaf(buildLeaf(280, 125, 1));
 
-        tree.addLeaf(buildLeaf(275, 200, 0));
+        tree.addLeaf(buildLeaf(275, 200, 3));
 
 
-        tree.addLeaf(buildLeaf(270, 253, 0));
-        tree.addLeaf(buildLeaf(330, 220, 2));
-        tree.addLeaf(buildLeaf(360, 170, 2));
+        tree.addLeaf(buildLeaf(270, 253, 1));
+        tree.addLeaf(buildLeaf(330, 220, 3));
+        tree.addLeaf(buildLeaf(360, 170, 3));
         tree.addLeaf(buildLeaf(360, 100, 1));
 
-
-        tree.addSmallLeaf(buildSmallLeaf(300,120,1));
-        tree.addSmallLeaf(buildSmallLeaf(250,120,1));
-        tree.addSmallLeaf(buildSmallLeaf(150,190,1));
-        tree.addSmallLeaf(buildSmallLeaf(120,130,1));
-        tree.addSmallLeaf(buildSmallLeaf(200,40,1));
-        tree.addSmallLeaf(buildSmallLeaf(270,40,1));
-
-        tree.addSmallLeaf(buildSmallLeaf(250,230,1));
-        tree.addSmallLeaf(buildSmallLeaf(200,250,1));
-        tree.addSmallLeaf(buildSmallLeaf(300,170,1));
-        tree.addSmallLeaf(buildSmallLeaf(100,170,1));
-        tree.addSmallLeaf(buildSmallLeaf(100,75,1));
-        tree.addSmallLeaf(buildSmallLeaf(80,120,1));
-        tree.addSmallLeaf(buildSmallLeaf(130,220,1));
-        tree.addSmallLeaf(buildSmallLeaf(320,90,1));
-        tree.addSmallLeaf(buildSmallLeaf(340,140,1));
-        tree.addSmallLeaf(buildSmallLeaf(200,170,1));
-
-
-        tree.addSmallLeaf(buildSmallLeaf(200,75,1));
+//
+//        tree.addSmallLeaf(buildSmallLeaf(300,120,1));
+//        tree.addSmallLeaf(buildSmallLeaf(250,120,1));
+//        tree.addSmallLeaf(buildSmallLeaf(150,190,1));
+//        tree.addSmallLeaf(buildSmallLeaf(120,130,1));
+//        tree.addSmallLeaf(buildSmallLeaf(200,40,1));
+//        tree.addSmallLeaf(buildSmallLeaf(270,40,1));
+//
+//        tree.addSmallLeaf(buildSmallLeaf(250,230,1));
+//        tree.addSmallLeaf(buildSmallLeaf(200,250,1));
+//        tree.addSmallLeaf(buildSmallLeaf(300,170,1));
+//        tree.addSmallLeaf(buildSmallLeaf(100,170,1));
+//        tree.addSmallLeaf(buildSmallLeaf(100,75,1));
+//        tree.addSmallLeaf(buildSmallLeaf(80,120,1));
+//        tree.addSmallLeaf(buildSmallLeaf(130,220,1));
+//        tree.addSmallLeaf(buildSmallLeaf(320,90,1));
+//        tree.addSmallLeaf(buildSmallLeaf(340,140,1));
+//        tree.addSmallLeaf(buildSmallLeaf(200,170,1));
 
 
+//        tree.addSmallLeaf(buildSmallLeaf(200,75,1));
 
 
+        tree.addTrunk(buildTrunk(250, 190, 80, 200));
 
         tree.addBranch(buildBranch(145, 140, 60, 20, 120));
         tree.addBranch(buildBranch(145, 320, 120, 20, 120));
 
         tree.addBranch(buildBranch(140, 210, 120, 15, 60));
+
+
+
 
 
         return tree;
@@ -158,8 +164,17 @@ public class TreeBuilder {
         tree.addLeaf(buildLeaf(20, 16, 3));
 
 
+
+
         return tree;
     }
+
+
+
+
+
+
+
 
 
 }
